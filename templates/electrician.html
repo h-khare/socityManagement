@@ -1,0 +1,46 @@
+{% extends 'adminbase.html' %}
+{% block content %}
+{% if user is not None %}
+<section class="information mt-5 pt-5">
+    <div class="container">
+        <div class="row ">
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                <h4>Welcome {{user.first_name}} {{user.last_name}}</h4>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                <h5><a class="active" href="{% url 'profile' %}">Dashboard</a> > <a class="actives" href="{% url 'electrician' %}">Electrician</a></h5>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="carpenter mt-5">
+    <div class="container">
+        <div class="content">
+            
+            <div class="row">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-6">
+                    <div class="conts">
+                        <h1 class="text-center">Electrician Details</h1>
+                        <div class="form">
+                            <form action="" method="post">
+                                {% csrf_token %}
+                                {{fm}}
+                                <div class="text-center mt-3">
+                                    <button class="btn btn-success">Add Electrician</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3"></div>
+            </div>
+        </div>
+    </div>
+</section>
+{% else %}
+    <div class=" text-center alert alert-danger mt-5 p-5" role="alert">
+        Please Login First <a href="{% url 'login' %}">Login</a>
+    </div>
+{% endif %}
+{% endblock content %}

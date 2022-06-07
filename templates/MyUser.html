@@ -1,0 +1,47 @@
+{% extends 'userbase.html' %}
+{% block content %}
+<section class="information ap mt-5 pt-5">
+    <div class="container">
+        <div class="row ">
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                <h4>Welcome, {{user.name}}</h4>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                <h5> <a  href="{% url 'user_profile' %}">Dashboard</a> > <a class="actives" href="{% url 'plumber_details' %}">Plumber Details</a></h5>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="details tpp" >
+    <div class="container">
+        <div class="contents">
+            <div class="row mt-5">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-6 contentss">
+                    <div class="container">
+                        <div class="row">
+                            <div class="text-center">
+                                <span><i class="fas fa-user"></i></span>
+                            </div>
+                            <div class="col-lg-6 text-center">
+                                <h5 class="mt-3">Name</h5>
+                                <h5 class="mt-3">Email</h5>
+                                <h5 class="mt-3">Address</h5>
+                                <h5 class="mt-3">Mobile</h5>
+                            </div>
+                            <div class="col-lg-6 text-center">
+                                <h5 class="mt-3">{{user.name}}</h5>
+                                <h5 class="mt-3">{{user.email}}</h5>
+                                <h5 class="mt-3">{{user.address}}</h5>
+                                <h5 class="mt-3">{{user.mobile}}</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

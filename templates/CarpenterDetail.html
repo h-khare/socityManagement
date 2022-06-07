@@ -1,0 +1,71 @@
+{% extends 'userbase.html' %}
+{% block content %}
+{% if usercontent is not None %}
+<section class="information mt-5 pt-5">
+    <div class="container">
+        <div class="row ">
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                <h4>Welcome, {{usercontent.name}}</h4>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                <h5> <a  href="{% url 'user_profile' %}">Dashboard</a> > <a class="actives" href="{% url 'carpenter_details' %}">Carpenter Details</a></h5>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="details">
+    <div class="container">
+        <div class="content">
+            <div class="row">
+               <div class="container">
+                <div class="table-responsive">
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                          <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Mobile</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        {% for ca in carpenter %}
+                        <tr>
+                            <th scope="row">{{forloop.counter}}</th>
+                            <td>{{ca.carname}}</td>
+                            <td>₹{{ca.carprice}}</td>
+                            <td>{{ca.carmobile}}</td>
+                            <td>{{ca.caraddress}}</td>
+                            <td>
+
+                                {% if ca.carbook %}
+
+                                <form action="{% url 'delCaBooking' ca.id %}" method="post">
+                                    {% csrf_token %}
+                                    <button class="btn btn-danger">Cancel Booking</button>
+                                  </form>
+                                {% else %}
+                                  {% if a  %}
+                                  <form action="{% url 'book_carpenter' ca.id %}" method="post">
+                                    {% csrf_token %}
+                                    <button class="btn btn-success">Book Now</button>
+                                  </form>
+                                  {% endif %}
+                                
+                                {% endif %}
+                            </td>
+                          </tr>
+                        {% endfor %}
+
+                    </tbody>
+                  </table>
+                </div>
+               </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+{% endblock content %}

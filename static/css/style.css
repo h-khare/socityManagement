@@ -1,0 +1,450 @@
+        /* @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300&family=Source+Sans+Pro:wght@300&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap'); */
+        
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        a {
+            text-decoration: none;
+            color: white;
+            cursor: pointer;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            outline: none;
+            border: none;
+            text-transform: capitalize;
+            font-family: 'Roboto', sans-serif;
+            transition: all .5s linear;
+        }
+        
+        header {
+            z-index: 1000;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            /* position: stiky;
+  top: 0; */
+            box-shadow: var(--box-shadow);
+        }
+        
+        .dropdown-menu {
+            background-color: black!important;
+        }
+        
+        .dropdown-menu li a {
+            color: white!important;
+        }
+        
+        .dropdown-menu li :hover {
+            background-color: black!important;
+        }
+        
+         :root {
+            /* --pink:#c70a33; */
+            --back: #087301;
+            --pink: #ff1971;
+            --black: #192a56;
+            --green: #192a56;
+            --light-color: #666;
+            --box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, 0.1);
+        }
+        
+        .container-fluid .navbar-brand {
+            margin-left: 3rem;
+        }
+        
+        .bg-lights {
+            background-color: black!important;
+        }
+        
+        .navbar-nav {
+            margin-right: 3rem;
+        }
+        
+        .navbar-nav li a:hover,
+        active {
+            /* font-weight: bold; */
+            color: var(--pink)!important;
+            text-decoration: underline;
+            transition: 0.3s ease all;
+        }
+        
+        .actives {
+            color: var(--pink)!important;
+        }
+        
+        .navbar-toggler-icon {
+            height: 20px;
+            width: 20px;
+        }
+        
+        .imgs {
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+        }
+        
+        .carousel-caption {
+            color: white!important;
+        }
+        
+        .imgs img {
+            width: 100%!important;
+            /* opacity: .7; */
+            filter: brightness(70%);
+        }
+        
+        .services .images {
+            width: 100%;
+            height: 300px;
+            border: 1px solid black;
+            color: white;
+            position: relative;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../img/3.jpg);
+        }
+        
+        .services .images4 {
+            width: 100%;
+            height: 300px;
+            color: white;
+            position: relative;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../img/4.jpg);
+        }
+        
+        .services .images1 {
+            width: 100%;
+            height: 300px;
+            color: white;
+            position: relative;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../img/1.jpg);
+        }
+        
+        .services .images2 {
+            width: 100%;
+            height: 300px;
+            color: white;
+            position: relative;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../img/2.jpg);
+        }
+        
+        .services .images3 {
+            width: 100%;
+            height: 300px;
+            color: white;
+            position: relative;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../img/5.jpg);
+        }
+        
+        .services .move {
+            position: absolute;
+            left: 2rem;
+            bottom: 0px;
+        }
+        /* .services .move span {
+    background-color: #087301!important;
+    width: 100px;
+    height: 90px;
+} */
+        
+        .services .move a {
+            font-size: 3rem;
+            /* border: 50%; */
+            color: #ffc107;
+        }
+        
+        .service-rate {
+            background-color: #f3f2ee!important;
+        }
+        
+        .login,
+        .registration {
+            /* margin-top: 100px; */
+            width: 100%;
+            height: 100vh;
+            /* background-image: url('../img/bg-01.webp');
+        background-repeat: no-repeat;
+        background-size: cover; */
+            background-color: #eee8e8;
+        }
+        
+        .login .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* border: 1px solid black; */
+            width: 25%;
+            /* height: 500pxx   ; */
+        }
+        
+        .login-content {
+            background-color: white!important;
+            padding: 1rem;
+        }
+        
+        .registration {
+            position: relative;
+            width: 100%;
+        }
+        
+        .regcon img {
+            width: 100%;
+            border: 2rem;
+        }
+        
+        .regcon .images {
+            padding-top: 5rem;
+            padding-left: 1rem;
+        }
+        
+        .registration-form input {
+            width: 100%;
+            /* margin-right: 5rem; */
+            /* border: transparent;
+    border-bottom: 1px solid#; */
+            margin-bottom: 0.8rem;
+            margin-top: .4rem;
+        }
+        
+        .registration-form {
+            padding: 0 5rem;
+        }
+        
+        .registrations-content {
+            position: relative;
+            width: 100%;
+        }
+        
+        .registration-content {
+            width: 35%;
+            position: absolute;
+            top: 50%;
+            margin-top: 2rem;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* height: 500px; */
+            border: 1px solid white;
+            background-color: white;
+            border-radius: 1rem;
+        }
+        
+        .login-content input {
+            width: 100%;
+            /* margin-right: 5rem; */
+            /* border: transparent;
+    border-bottom: 1px solid#; */
+            margin-bottom: 1rem;
+            margin-top: .5rem;
+        }
+        
+        .login-api a {
+            margin-top: 2rem;
+            font-size: 30px;
+            color: black;
+            margin-right: 1rem;
+        }
+        
+        .login-form {
+            margin-top: 3rem;
+            margin-left: 1rem;
+            margin-right: 1rem;
+        }
+        /*
+.login-form form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+*/
+        
+        .card1 {
+            width: 100%;
+            height: 150px;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .card1 .content {
+            padding: 2rem;
+            padding-top: 3rem;
+        }
+        
+        .card1 h5,
+        h3 {
+            color: white!important;
+        }
+        
+        .card1 .content span i {
+            font-size: 3rem;
+            color: white!important;
+        }
+        
+        .contentss {
+            padding: 1rem;
+            border-radius: 10px;
+            background-color: white;
+        }
+        
+        pa h5 a {
+            color: black!important;
+        }
+        
+        .tpp i {
+            color: var(--pink);
+            font-size: 4rem;
+        }
+        
+        h5 a {
+            color: black;
+        }
+        
+        .ap .carpenter {
+            position: relative;
+            width: 100%;
+        }
+        
+        .conts {
+            background-color: white;
+            padding: 2rem;
+        }
+        
+        .details .content {
+            background-color: white!important;
+            box-shadow: var(--box-shadow);
+            border-radius: .5rem;
+        }
+        
+        .details .content .row {
+            padding: 3rem;
+            margin-top: 5rem;
+        }
+        
+        .about-slider {
+            width: 100;
+            height: 100vh;
+            position: relative;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/elect.jpg');
+        }
+        
+        .slider-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .slider-content h1 {
+            color: white;
+            font-size: 2rem!important;
+        }
+        
+        .slider-content p {
+            color: white!important;
+        }
+        
+        .information .row {
+            background-color: white;
+            padding: .5rem;
+            padding-bottom: .2rem;
+        }
+        
+        @media (max-width: 991px) {
+            .navbar-nav {
+                padding-left: 3rem!important;
+            }
+            .imgs {
+                width: 100%;
+                height: 70vh;
+            }
+            .card1 {
+                margin-bottom: 2rem;
+            }
+            .slider-content {
+                width: 70%;
+            }
+            .login .content {
+                width: 40%;
+            }
+            .registration-content {
+                width: 55%;
+                margin-top: 2rem;
+            }
+            .h5,
+            h5 {
+                font-size: 1rem;
+            }
+            .information h4 {
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .navbar-nav {
+                padding-left: 3rem!important;
+            }
+            .imgs {
+                width: 100%;
+                height: 50vh;
+            }
+            .slider-content {
+                width: 70%;
+            }
+            .h5,
+            h5 {
+                font-size: .8rem;
+            }
+            .information h4 {
+                font-size: 1rem;
+            }
+            .slider-content h1 {
+                font-size: 1.5rem!important;
+            }
+            .slider-content p {
+                font-size: .8rem!important;
+            }
+            .login .content {
+                width: 50%;
+            }
+            .registration-form {
+                padding: 0 4rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .imgs {
+                width: 100%;
+                height: 50vh;
+            }
+            .slider-content {
+                width: 100%;
+            }
+            .login .content {
+                width: 65%;
+            }
+            .registration-form {
+                padding: 0 3rem;
+            }
+            .registration-content {
+                width: 70%;
+                margin-top: 2rem;
+            }
+            .card1 {
+                height: 170px;
+                width: 80%;
+                margin-left: 2.3rem;
+            }
+        }

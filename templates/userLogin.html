@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<section class="login">
+    <div class="container">
+        <div class="content">
+            <div class="login-content">
+                {% if errors %}
+                <div class="text-center alert alert-danger" role="alert">
+                    Enter correct username or password
+                  </div>
+                {% endif %}
+                {% if logout_details %}
+                <div class="alert alert-success" role="alert">
+                    Logout Successfully!!
+                  </div>
+                {% endif %}
+                <h1 class="text-center">User Login</h1>
+                <div class="login-form">
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        {{fm}}
+
+                        <div class="button text-center">
+                            <button class="btn btn-warning">Login</button>
+                        </div>
+                    </form>
+                    <div class="login-api text-center">
+                        <span><a class="fab fa-facebook"></a></span>
+                        <span><a class="fab fa-linkedin-in"></a></span>
+                        <span><a class="fab fa-google-plus-g"></a></span>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

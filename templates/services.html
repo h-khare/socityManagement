@@ -1,0 +1,152 @@
+{% extends 'userbase.html' %}
+{% block content %}
+<section class="information mt-5 pt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                <h4>Welcome, {{usercontent.name}}</h4>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                <h5>Society Management > <a class="actives" href="{% url 'user_profile' %}">Dashboard</a></h5>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="cardss mt-5">
+    <div class="container">
+        <div class="row ">
+            <div class=" col-lg-3 col-md-6 col-sm-6 col-xs-6">
+                <a href=""><div class="card1 bg-primary">
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                <h5>Availability</h5>
+                                <h3>{{count}}</h3>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <span>
+                                    <i class="fas fa-chart-line"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div></a>
+            </div>
+            <div class=" col-lg-3 col-md-6 col-sm-6 col-xs-6">
+                <a href="{% url 'plumber_details' %}">
+                    <div class="card1 bg-warning">
+                        <div class="content">
+                            <div class="row">
+                                <div class="">
+                                    <h5>Plumber</h5>
+                                    <h3>{{plumber_detail.plname}}</h3>
+                                    <p>₹{{plumber_detail.plnprice}}</p>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class=" col-lg-3 col-md-6 col-sm-6 col-xs-6">
+                <a href="{% url 'electrician_details' %}"><div class="card1 bg-danger">
+                    <div class="content">
+                        <div class="row">
+                            <div class="">
+                                <h5>Electrician</h5>
+                                <h3>{{electirican_detail.elename}}</h3>
+                                <p>₹{{electirican_detail.eleprice}}</p>
+                            </div>
+                            {% comment %} <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <span>
+                                    <i class="fa-solid fa-plug-circle-bolt"></i>
+                                </span>
+                            </div> {% endcomment %}
+                        </div>
+                    </div>
+                </div></a>
+            </div>
+            <div class=" col-lg-3 col-md-6 col-sm-6 col-xs-6">
+                <a href="{% url 'painter_details' %}">
+                    <div class="card1 bg-info">
+                        <div class="content">
+                            <div class="row">
+                                <div class="">
+                                    <h5>Painter</h5>
+                                    <h3>{{painter_details.painame}}</h3>
+                                    <p>₹{{painter_details.paiprice}}</p>
+                                </div>
+    
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="row pt-5">
+            <div class=" col-lg-3 col-md-6 col-sm-6 col-xs-6">
+                <a href="{% url 'carpenter_details' %}"><div class="card1 bg-success">
+                    <div class="content">
+                        <div class="row">
+                            <div class="">
+                                <h5>Carpenters</h5>
+                                <h3>{{carpenter_details.carname}}</h3>
+                                <p>₹{{carpenter_details.carprice}}</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div></a>
+            </div>
+            <div class=" col-lg-3 col-md-6 col-sm-6 col-xs-6">
+                <a href="{% url 'roofer_details' %}"><div class="card1 bg-info">
+                    <div class="content">
+                        <div class="row">
+                            <div class="">
+                                <h5>Roofing</h5>
+                                <h3>{{roffer_detail.rufname}}</h3>
+                                <p>₹{{roffer_detail.rufprice}}</p>
+                            </div>
+                        
+                        </div>
+                    </div>
+                </div></a>
+            </div>
+            <div class=" col-lg-3 col-md-6 col-sm-6 col-xs-6">
+                <a href=""><div class="card1 bg-warning">
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                <h5>Complain</h5>
+                                <h3>0</h3>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <span>
+                                    <i class="far fa-list-alt"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div></a>
+            </div>
+            <div class=" col-lg-3 col-md-6 col-sm-6 col-xs-6">
+                <div class="card1 bg-danger">
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                <h5>Users</h5>
+                                <h3>0</h3>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <span>
+                                    <i class="fas fa-users"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+{% endblock content %}

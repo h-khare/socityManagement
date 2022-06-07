@@ -1,0 +1,173 @@
+{% extends 'adminbase.html' %}
+{% block content %}
+{% if user is not None %}
+<section class="information mt-5 pt-5">
+    <div class="container">
+        <div class="row ">
+            <div class="col-lg-8 col-md-6 col-sm-6 col-xs-6">
+                <h4>Welcome, {{userss.first_name}} {{userss.last_name}}</h4>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6">
+                <h5>Society Management > <a class="actives" href="{% url 'profile' %}">Dashboard</a></h5>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="cardss mt-5">
+<div class="container">
+    <div class="row ">
+        <div class=" col-lg-3 col-md-6 col-sm-6 col-xs-6">
+            <div class="card1 bg-primary">
+                <div class="content">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                            <h5>Availability</h5>
+                            <h3>{{k}}</h3>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                            <span>
+                                <i class="fas fa-chart-line"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=" col-lg-3 col-md-6 col-sm-6 col-xs-6 ">
+            <a href="{% url 'plumber' %}"><div class="card1 bg-warning">
+                <div class="content">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                            <h5>Plumber</h5>
+                            <h3>{{pl}}</h3>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                            <span>
+                                <i class="fa-solid fa-wrench"></i></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div></a>
+        </div>
+        <div class=" col-lg-3 col-md-6 col-sm-6 col-xs-6">
+            <a href="{% url 'electrician' %}">
+                <div class="card1 bg-danger">
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                <h5>Electrician</h5>
+                                <h3>{{e}}</h3>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <span>
+                                    <i class="fa-solid fa-plug-circle-bolt"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class=" col-lg-3 col-md-6 col-sm-6 col-xs-6">
+            <a href="{% url 'painter' %}">
+                <div class="card1 bg-info">
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                <h5>Painter</h5>
+                                <h3>{{p}}</h3>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <span>
+                                    <i class="fas fa-paint-roller"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="row pt-5">
+        <div class=" col-lg-3 col-md-6 col-sm-6 col-xs-6">
+            <a href="{% url 'carpenter' %}"><div class="card1 bg-success">
+                <div class="content">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                            <h5>Carpenters</h5>
+                            <h3>{{c}}</h3>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                            <span>
+                                <i class="fa-solid fa-rug"></i></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div></a>
+        </div>
+        <div class=" col-lg-3 col-md-6 col-sm-6 col-xs-6">
+            <a href="{% url 'roofer' %}">
+                <div class="card1 bg-info">
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                <h5>Roofing</h5>
+                                <h3>{{r}}</h3>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <span>
+                                    <i class="fa-solid fa-people-roof"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class=" col-lg-3 col-md-6 col-sm-6 col-xs-6">
+            <div class="card1 bg-warning">
+                <div class="content">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                            <h5>Complain</h5>
+                            <h3>0</h3>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                            <span>
+                                <i class="far fa-list-alt"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=" col-lg-3 col-md-6 col-sm-6 col-xs-6">
+          <a href="{% url 'user_info' %}">
+            <div class="card1 bg-danger">
+                <div class="content">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                            <h5>Users</h5>
+                            <h3>{{us}}</h3>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                            <span>
+                                <i class="fas fa-users"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </a>
+        </div>
+    </div>
+</div>
+</section>
+{% else %}
+    <div class=" text-center alert alert-danger mt-5 p-5" role="alert">
+        Please Login First <a href="{% url 'login' %}">Login</a>
+    </div>
+{% endif %}
+{% endblock content %}

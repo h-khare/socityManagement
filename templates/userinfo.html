@@ -1,0 +1,73 @@
+{% extends 'adminbase.html' %}
+{% block content %}
+{% if user is not None %}
+<section class="information mt-5 pt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                <h4>Welcome {{user.first_name}} {{user.last_name}}</h4>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                <h5><a class="active" href="{% url 'profile' %}">Dashboard</a> > <a class="actives" href="{% url 'carpenter' %}">Carpenter</a></h5>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="details">
+    <div class="container">
+        <div class="content">
+            <div class="row">
+               <div class="container">
+                   <h2 class="mt-2">Current Users</h2>
+                <table class="table table-hover">
+                    <thead>
+                      <tr>
+                          <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Mobile</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Service</th>
+                        <th scope="col">Carpenter</th>
+                        <th scope="col">Plumber</th>
+                        <th scope="col">Electrician</th>
+                        <th scope="col">Painter</th>
+                        <th scope="col">Roffer</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        
+                        {% for u in users %}
+                        <tr>
+                            <th scope="row">{{forloop.counter}}</th>
+                            <td>{{u.name}}</td>
+                            <td>{{u.email}}</td>
+                            <td>{{u.mobile}}</td>
+                            <td>{{u.address}}</td>
+                            <td>{{u.service}}</td>
+                            <td>{{u.carpentersDetails}}</td>
+                            <td>{{u.plumberDetails}}</td>
+                            <td>{{u.electricianDetails}}</td>
+                            <td>{{u.painterDetails}}</td>
+                            <td>{{u.rooferDetails}}</td>
+                           
+                          </tr>
+                        {% endfor %}
+
+                    </tbody>
+                </table>
+               </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% else %}
+    <div class=" text-center alert alert-danger mt-5 p-5" role="alert">
+        Please Login First <a href="{% url 'login' %}">Login</a>
+    </div>
+{% endif %}
+{% endblock content %}
+
+
+
+

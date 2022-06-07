@@ -1,0 +1,202 @@
+{% extends 'adminbase.html' %}
+{% block content %}
+{% if user is not None %}
+<section class="information mt-5 pt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                <h4>Welcome {{user.first_name}} {{user.last_name}}</h4>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                <h5><a class="active" href="{% url 'profile' %}">Dashboard</a> > <a class="actives" href="{% url 'carpenter' %}">Carpenter</a></h5>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="details">
+    <div class="container">
+        <div class="content">
+            <div class="row">
+               <div class="container">
+                   <h2 class="mt-2">Plumber</h2>
+                <div class="table-responsive">
+                  <table class="table table-hover table-responsive">
+                    <thead>
+                      <tr>
+                          <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Mobile</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Update</th>
+                        <th scope="col">Delete</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        
+                        {% for pl in plumber %}
+                        <tr>
+                            <th scope="row">{{forloop.counter}}</th>
+                            <td>{{pl.plname}}</td>
+                            <td>₹{{pl.plnprice}}</td>
+                            <td>{{pl.plnmobile}}</td>
+                            <td>{{pl.plnaddress}}</td>
+                            <td><a href="{% url 'update_plumber' pl.id %}" class="btn btn-sm btn-success">Update</a></td>
+                            <td><form action="{% url 'delete_plumber' pl.id %}" method="post">
+                              {% csrf_token %}
+                              <button class="btn btn-danger">Delete</button>
+                            </form></td>
+                          </tr>
+                        {% endfor %}
+
+                    </tbody>
+                  </table>
+                </div>
+                  <h2 class="color mt-2">Carpenter</h2>
+                  <div class="table-responsive">
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                          <th scope="col">Name</th>
+                          <th scope="col">Price</th>
+                          <th scope="col">Mobile</th>
+                          <th scope="col">Address</th>
+                          <th scope="col">Update</th>
+                          <th scope="col">Delete</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                          {% for ca in carpenter %}
+                          <tr>
+                              <th scope="row">{{forloop.counter}}</th>
+                              <td>{{ca.carname}}</td>
+                              <td>₹{{ca.carprice}}</td>
+                              <td>{{ca.carmobile}}</td>
+                              <td>{{ca.caraddress}}</td>
+                              <td><a href="{% url 'update_carpenter' ca.id %}" class="btn btn-sm btn-success">Update</a></td>
+                              <td><form action="{% url 'delete_carpenter' ca.id %}" method="post">
+                                {% csrf_token %}
+                                <button class="btn btn-danger">Delete</button>
+                              </form></td></td>
+                            </tr>
+                          {% endfor %}
+  
+                      </tbody>
+                    </table>
+                  </div>
+                  <h2 class="colo mt-2">Roofer</h2>
+                  <div class="table-responsive">
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                          <th scope="col">Name</th>
+                          <th scope="col">Price</th>
+                          <th scope="col">Mobile</th>
+                          <th scope="col">Address</th>
+                          <th scope="col">Update</th>
+                          <th scope="col">Delete</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+  
+                          {% for rf in roofer %}
+  <tr>
+      <th scope="row">{{forloop.counter}}</th>
+      <td>{{rf.rufname}}</td>
+      <td>₹{{rf.rufprice}}</td>
+      <td>{{rf.rufmobile}}</td>
+      <td>{{rf.rufaddress}}</td>
+      <td><a href="{% url 'update_roofer' rf.id %}" class="btn btn-sm btn-success">Update</a></td>
+      <td><form action="{% url 'delete_roofer' rf.id %}" method="post">
+        {% csrf_token %}
+        <button class="btn btn-danger">Delete</button>
+      </form></td></td>
+    </tr>
+  {% endfor %}
+  
+                      </tbody>
+                    </table>
+                  </div>
+                  <h2 class="color mt-2">Painter</h2>
+                  <div class="table-responsive">
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                          <th scope="col">Name</th>
+                          <th scope="col">Price</th>
+                          <th scope="col">Mobile</th>
+                          <th scope="col">Address</th>
+                          <th scope="col">Update</th>
+                          <th scope="col">Delete</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                          {% for pa in painter %}
+                              <tr>
+                                  <th scope="row">{{forloop.counter}}</th>
+                                  <td>{{pa.painame}}</td>
+                                  <td>₹{{pa.paiprice}}</td>
+                                  <td>{{pa.paimobile}}</td>
+                                  <td>{{pa.paiaddress}}</td>
+                                  <td><a href="{% url 'update_painter'  pa.id %}" class="btn btn-sm btn-success">Update</a></td>
+                                  <td><form action="{% url 'delete_painter' pa.id %}" method="post">
+                                    {% csrf_token %}
+                                    <button class="btn btn-danger">Delete</button>
+                                  </form></td></td>
+                              </tr>
+                              {% endfor %}
+  
+                      </tbody>
+                    </table>
+                    
+                  </div><h2 class="color mt-2">Electrician</h2>
+                  <div class="table-responsive">
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                          <th scope="col">Name</th>
+                          <th scope="col">Price</th>
+                          <th scope="col">Mobile</th>
+                          <th scope="col">Address</th>
+                          <th scope="col">Update</th>
+                          <th scope="col">Delete</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                          {% for el in electrician %}
+  <tr>
+      <th scope="row">{{forloop.counter}}</th>
+      <td>{{el.elename}}</td>
+      <td>₹{{el.eleprice}}</td>
+      <td>{{el.elemobile}}</td>
+      <td>{{el.eleaddress}}</td>
+      <td><a href="{% url 'update_electrician' el.id %}" class="btn btn-sm btn-success">Update</a></td>
+      <td><form action="{% url 'delete_electrician' el.id %}" method="post">
+        {% csrf_token %}
+        <button class="btn btn-danger">Delete</button>
+      </form></td></td>
+    </tr>
+  {% endfor %}
+  
+                      </tbody>
+                    </table>
+                  </div>
+               </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% else %}
+    <div class=" text-center alert alert-danger mt-5 p-5" role="alert">
+        Please Login First <a href="{% url 'login' %}">Login</a>
+    </div>
+{% endif %}
+{% endblock content %}
+
+
+
+

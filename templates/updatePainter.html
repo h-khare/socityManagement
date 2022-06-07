@@ -1,0 +1,61 @@
+{% extends 'adminbase.html' %}
+{% block content %}
+{% if user is not None %}
+<section class="information mt-5 pt-5">
+    <div class="container">
+        <div class="row ">
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                <h4>Welcome {{user.first_name}} {{user.last_name}}</h4>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                <h5><a class="active" href="{% url 'profile' %}">Dashboard</a> > <a class="actives" href="{% url 'plumber' %}">Plumber</a></h5>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="carpenter mt-5">
+    <div class="container">
+        <div class="content">
+            
+            <div class="row">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-6">
+                    <div class="conts">
+                        <h1 class="text-center">Painter Details</h1>
+                        <div class="form">
+                            <form action="{% url 'update_painter' fm.id %}" method="post">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" name="name" value="{{fm.painame}}" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="text" name="email" value="{{fm.paiemail}}" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="mobile">Mobile</label>
+                                    <input type="text" name="mobile" value="{{fm.paimobile}}" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="address">Address</label>
+                                    <input type="text" name="address" value="{{fm.paiaddress}}" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="price">Price</label>
+                                    <input type="text" name="price" value="{{fm.paiprice}}" class="form-control">
+                                </div>
+                                <div class="text-center mt-3">
+                                    <button class="btn btn-success">Update Painter</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3"></div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+{% endblock content %}
